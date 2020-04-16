@@ -1,6 +1,6 @@
 .card-container {
-  width: 245px;
-  height: 390px;
+  width: 270px;
+  height: 402px;
   background: linear-gradient(to right, $light-pink, $light-purple);
   margin: 0;
   border-radius: 10px;
@@ -8,15 +8,16 @@
 }
 
 .card {
-  width: 243px;
-  height: 388px;
+  width: 268px;
+  height: 400px;
   margin: 0;
   background: $dark-purple;
   border-radius: 10px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 15px;
+  padding: 5px;
+  position: absolute;
 
   h2 {
     color: $light-purple;
@@ -31,7 +32,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   p {
@@ -40,13 +41,21 @@
   }
 
   .goblet {
-    height: 70px;
-    width: 70px;
-    margin: 15px;
+    height: 50px;
+    width: 50px;
+    margin: 4px;
   }
 
-  .divider {
-    height: 20px;
-    width: 20px;
+  .favorite-button, .white-star {
+    height: 30px;
+    width: 30px;
+    background: none;
+    border: none;
+  }
+
+  .favorite-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
   }
 }
