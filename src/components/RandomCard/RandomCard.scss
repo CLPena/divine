@@ -1,6 +1,27 @@
+.dashboard {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .buttons-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 2%;
+  }
+
+  .dashboard-buttons {
+    @include buttonStyle;
+    span {
+      @include buttonSpanStyle;
+    }
+  }
+}
+
 .card-container {
   width: 270px;
-  height: 402px;
+  height: 412px;
   background: linear-gradient(to right, $light-pink, $light-purple);
   margin: 0;
   border-radius: 10px;
@@ -9,14 +30,14 @@
 
 .card {
   width: 268px;
-  height: 400px;
+  height: 410px;
   margin: 0;
   background: $dark-purple;
   border-radius: 10px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 5px;
+  padding: 8px 5px;
   position: absolute;
 
   h2 {

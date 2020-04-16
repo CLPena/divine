@@ -1,22 +1,50 @@
-import React from 'react';
-import Nav from '../Nav/Nav'
-import RandomCard from '../RandomCard/RandomCard'
+import React, { Component } from 'react';
+import { apiFetchRandomCard } from '../../apiCalls/apiCalls';
+import Nav from '../Nav/Nav';
+import RandomCard from '../RandomCard/RandomCard';
+import BrowseCards from '../BrowseCards/BrowseCards';
 
-function App() {
-  return (
-    <main>
-      <Nav />
-        <RandomCard />
-      <div className='buttons-container'>
-        <button className='dashboard-buttons draw-card'>
-          <span>DRAW A CARD</span>
-        </button>
-        <button className='dashboard-buttons browse'>
-          <span>BROWSE CARDS</span>
-        </button>
-      </div>
-    </main>
-  );
+import { Route, Switch } from 'react-router-dom';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      card: {}
+    }
+  }
+
+  getRandomCard = () => {
+    apiFetchRandomCard()
+    .then(data => this.setState({ card: data.cards[0] }))
+  }
+
+  render() {
+    return (
+      <main>
+        <Nav />
+        <Switch>
+
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <RandomCard card={this.state.card} getRandomCard={this.getRandomCard}/>
+            )}
+          />
+
+          <Route
+            path="/browse"
+            render={() => (
+              <BrowseCards />
+            )}
+          />
+
+        </Switch>
+      </main>
+    );
+  }
+
 }
 
 export default App;
