@@ -1,14 +1,12 @@
 import React from 'react';
 import Nav from '../Nav/Nav'
+import RandomCard from '../RandomCard/RandomCard'
 
 function App() {
   return (
     <main>
       <Nav />
-      <div className='card-container'>
-        <div className='card'>
-        </div>
-      </div>
+        <RandomCard />
       <div className='buttons-container'>
         <button className='dashboard-buttons draw-card'>
           <span>DRAW A CARD</span>

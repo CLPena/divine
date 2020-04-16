@@ -1,0 +1,52 @@
+.card-container {
+  width: 245px;
+  height: 390px;
+  background: linear-gradient(to right, $light-pink, $light-purple);
+  margin: 0;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+.card {
+  width: 243px;
+  height: 388px;
+  margin: 0;
+  background: $dark-purple;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 15px;
+
+  h2 {
+    color: $light-purple;
+  }
+
+  h3 {
+    color: $light-purple;
+  }
+
+  .suit-arcana {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $periwinkle;
+    text-align: center;
+  }
+
+  .goblet {
+    height: 70px;
+    width: 70px;
+    margin: 15px;
+  }
+
+  .divider {
+    height: 20px;
+    width: 20px;
+  }
+}
