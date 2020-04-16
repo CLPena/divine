@@ -6,25 +6,49 @@ header {
   position: sticky;
   top: 0px;
   z-index: 9999;
-  .home, .logo {
+
+  .logo {
     height: auto;
     width: 80px;
     padding: 0;
-    margin: 0;
+    margin: 0 10px 0 0;
     background: none;
     border: none;
   }
-  .nav-text {
-    width: 150px;
+
+  .home {
+    // width: 200px;
     text-align: justify;
     margin-left: 10px;
+    background: none;
+    border: none;
+    display: flex;
+    flex-flow: row nowrap;
   }
+
   h1 {
     color: $light-pink;
-    font-size: 2.8em;
+    font-size: 46px;
+    letter-spacing: 1px;
   }
+
   h3 {
     color: $light-purple;
-    font-size: 1.23em;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .star {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+  }
+
+  .favorites {
+    @include buttonStyle;
+    
+    span {
+      @include buttonSpanStyle;
+    }
   }
 }

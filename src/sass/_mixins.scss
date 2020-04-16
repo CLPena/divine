@@ -1,22 +1,35 @@
 @mixin buttonStyle {
-  padding: 10px 30px;
-  border-radius: 15px;
-  background-color: none;
-  color:#fff;
-  text-decoration:none;
-  transition: .2s;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  font-size:1rem;
+  background: linear-gradient(to right, $light-pink, $light-purple);
+  border-radius: 10px;
+  color: $light-pink;
+  font-size: 20px;
+  padding: 1px;
+  text-decoration: none;
+  border: none;
+  width: 200px;
+  height: 50px;
 
   &:hover {
-    background-color:$light-green;
-    transition: .2s;
-    cursor:pointer;
-  }
+    transition: 1s;
+    cursor: pointer;
+    background: linear-gradient(256.25deg, $transparent-pink 0.36%, $transparent-purple 97.78%);
 
-  &:disabled {
-    background-color:$light-gray;
-    cursor: no-drop;
+  }
+}
+
+@mixin buttonSpanStyle {
+  background: $dark-purple;
+  border-radius: 10px;
+  width: 198px;
+  height: 48px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    transition: 1s;
+    background: linear-gradient(256.25deg, $transparent-pink 0.36%, $transparent-purple 97.78%);
+    color: #FFFFFF;
   }
 }

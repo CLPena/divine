@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 import Nav from '../Nav/Nav'
 
 function App() {
@@ -9,10 +8,10 @@ function App() {
       <div className='random-card-container'>
       </div>
       <button className='dashboard-buttons draw-card'>
-        DRAW A CARD
+        <span>DRAW A CARD</span>
       </button>
       <button className='dashboard-buttons browse'>
-        BROWSE CARDS
+        <span>BROWSE CARDS</span>
       </button>
     </main>
   );
