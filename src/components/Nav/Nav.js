@@ -1,18 +1,24 @@
 import React from 'react';
 import './Nav.scss';
+import logo from '../../icons/moon.png';
+import star from '../../icons/star.png'
 
-function App() {
+const Nav = () => {
   return (
-    <nav>
+    <header>
       <button className='home'>
-        MOON IMAGE
+        <img className='logo' src={logo} alt='moon logo'/>
       </button>
       <div className='nav-text'>
         <h1>DIVINE</h1>
         <h3>SIMPLE TAROT</h3>
       </div>
-    </nav>
+      <button className='favorites'>
+        <img className='star' src={star} alt='star icon'/>
+        FAVORITES
+      </button>
+    </header>
   );
 }
 
-export default App;
+export default Nav;
