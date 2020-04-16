@@ -6,21 +6,21 @@
   padding: 1px;
   text-decoration: none;
   border: none;
-  width: 200px;
+  width: 245px;
   height: 50px;
+  margin: 10px;
 
   &:hover {
     transition: 1s;
     cursor: pointer;
-    background: linear-gradient(256.25deg, $transparent-pink 0.36%, $transparent-purple 97.78%);
-
+    background: $dark-purple;
   }
 }
 
 @mixin buttonSpanStyle {
   background: $dark-purple;
   border-radius: 10px;
-  width: 198px;
+  width: 243px;
   height: 48px;
   display: flex;
   flex-flow: row nowrap;

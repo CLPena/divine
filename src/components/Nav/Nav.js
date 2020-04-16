@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../icons/moon.png';
-import star from '../../icons/white-star.png'
+import star from '../../icons/white-star.png';
+import planet from '../../icons/planet.png'
 
 const Nav = () => {
   return (
@@ -13,13 +14,17 @@ const Nav = () => {
         </div>
       </button>
 
-
       <button className="favorites">
         <span>
           <img className='star' src={star} alt='star icon'/>
           FAVORITES
         </span>
       </button>
+      <span className="search-container">
+        <input className="search" placeholder="search...">
+        </input>
+        <button className="search-button"><img className='planet' src={planet} alt='search icon'/></button>
+      </span>
     </header>
   );
 }
