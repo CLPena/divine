@@ -9,13 +9,13 @@ class BrowseCards extends Component {
     super();
   }
 
-  componentDidMount = () => {
-    let cards;
-    apiFetchAllCards()
-    .then(data => cards = data)
-    .then(cards => this.props.getCards(cards.cards))
-    .catch(err => console.log(err.message))
-  }
+  // componentDidMount = () => {
+  //   let cards;
+  //   apiFetchAllCards()
+  //   .then(data => cards = data)
+  //   .then(cards => this.props.getCards(cards.cards))
+  //   .catch(err => console.log(err.message))
+  // }
 
   render() {
     return (
