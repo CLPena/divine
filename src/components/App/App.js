@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import { apiFetchRandomCard } from '../../apiCalls/apiCalls';
+import { connect } from 'react-redux';
+import { getRandomCard } from '../../actions';
+import { Route, Switch } from 'react-router-dom';
+
+
 import Nav from '../Nav/Nav';
 import RandomCard from '../RandomCard/RandomCard';
 import BrowseCards from '../BrowseCards/BrowseCards';
 
-import { Route, Switch } from 'react-router-dom';
+import { apiFetchRandomCard } from '../../apiCalls/apiCalls';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      card: {}
-    }
-  }
-
-  getRandomCard = () => {
+  componentDidMount = () => {
     apiFetchRandomCard()
-    .then(data => this.setState({ card: data.cards[0] }))
+    .then(randomCard => this.props.getRandomCard(randomCard.cards[0]))
+    .catch(err => console.log(err.message))
   }
 
   render() {
@@ -29,7 +27,7 @@ class App extends Component {
             exact
             path="/"
             render={() => (
-              <RandomCard card={this.state.card} getRandomCard={this.getRandomCard}/>
+              <RandomCard />
             )}
           />
 
@@ -46,5 +44,12 @@ class App extends Component {
   }
 
 }
+const mapStateToProps = (state) => ({
+  randomCard: state.randomCard
+});
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  getRandomCard: randomCard => dispatch( getRandomCard(randomCard) )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import goblet from '../../icons/goblet.png';
 import whiteStar from '../../icons/white-star.png';
-import { apiFetchAllCards } from '../../apiCalls/apiCalls';
 
 class Card extends Component {
   constructor(props){

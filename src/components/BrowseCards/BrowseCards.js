@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { apiFetchAllCards } from '../../apiCalls/apiCalls';
 import Card from '../Card/Card';
+import { connect } from 'react-redux';
+// import { getCards } from '../../actions';
 
 class BrowseCards extends Component {
   constructor(props){
     super();
     this.state = {
-      cards: []
+      cards: [],
     }
   }
 
@@ -27,5 +29,14 @@ class BrowseCards extends Component {
 
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  // fetchUserRatings: allRatings => dispatch( getRatings(allRatings) )
+})
 
-export default BrowseCards;
+const mapStateToProps = (state) => ({
+  cards: state.cards,
+  // userRatings: state.userRatings,
+  // userInfo: state.userInfo
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(BrowseCards);
