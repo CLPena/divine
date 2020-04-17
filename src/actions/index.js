@@ -8,7 +8,7 @@ export const getRandomCard = (randomCard) => ({
   randomCard
 })
 
-export const toggleFavorite = (selectedCard) => ({
-  type: 'TOGGLE_FAVORITE',
+export const addFavorite = (selectedCard) => ({
+  type: 'ADD_FAVORITE',
   selectedCard
 })

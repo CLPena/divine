@@ -2,25 +2,25 @@ import React, { Component } from 'react';
 import { apiFetchAllCards } from '../../apiCalls/apiCalls';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
-import { toggleFavorite } from '../../actions';
+import { addFavorite, getCards } from '../../actions';
 
 class BrowseCards extends Component {
   constructor(props){
     super();
-    this.state = {
-      cards: [],
-    }
   }
 
   componentDidMount = () => {
+    let cards;
     apiFetchAllCards()
-    .then(data => this.setState({cards: data.cards}))
+    .then(data => cards = data)
+    .then(cards => this.props.getCards(cards.cards))
+    .catch(err => console.log(err.message))
   }
 
   render() {
     return (
       <div className="browse-dashboard">
-        {this.state.cards.map(card => {
+        {this.props.cards.map(card => {
           return <Card key={card.name} name={card.name} suit={card.suit} type={card.type} meaning_up={card.meaning_up}/>
         })}
       </div>
@@ -30,14 +30,12 @@ class BrowseCards extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  // fetchUserRatings: allRatings => dispatch( getRatings(allRatings) )
+  getCards: cards => dispatch( getCards(cards) )
 })
 
 const mapStateToProps = (state) => ({
   cards: state.cards,
   favorites: state.favorites
-  // userRatings: state.userRatings,
-  // userInfo: state.userInfo
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BrowseCards);

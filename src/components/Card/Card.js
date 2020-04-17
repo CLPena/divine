@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import goblet from '../../icons/goblet.png';
 import whiteStar from '../../icons/white-star.png';
-import { toggleFavorite } from '../../actions';
+import { addFavorite } from '../../actions';
 
 class Card extends Component {
 
   toggleFavorite = (e) => {
     e.preventDefault();
-    this.props.toggleFavorite(e.target.id)
+    let selectedCard = this.props.cards.find(card => card.name === e.target.id);
+    let matchingCard = this.props.favorites.find(card => card.name === selectedCard.name);
+
+    if(matchingCard){
+      console.log('matching', matchingCard)
+    } else {
+      this.props.addFavorite(selectedCard)
+    }
   }
 
   render() {
@@ -37,11 +44,12 @@ class Card extends Component {
 
 const mapStateToProps = (state) => ({
   randomCard: state.randomCard,
-  favorites: state.favorites
+  favorites: state.favorites,
+  cards: state.cards
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleFavorite: selectedCard => dispatch( toggleFavorite(selectedCard) )
+  addFavorite: selectedCard => dispatch( addFavorite(selectedCard) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
