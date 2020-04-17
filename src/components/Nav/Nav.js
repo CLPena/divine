@@ -2,17 +2,20 @@ import React from 'react';
 import logo from '../../icons/moon.png';
 import star from '../../icons/white-star.png';
 import planet from '../../icons/planet.png'
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
     <header>
-      <button className='home'>
-        <img className='logo' src={logo} alt='moon logo'/>
-        <div className='nav-text'>
-          <h1>DIVINE</h1>
-          <h3>SIMPLE TAROT</h3>
-        </div>
-      </button>
+      <Link to="/">
+        <button className='home'>
+          <img className='logo' src={logo} alt='moon logo'/>
+          <div className='nav-text'>
+            <h1>DIVINE</h1>
+            <h3>SIMPLE TAROT</h3>
+          </div>
+        </button>
+      </Link>
 
       <button className="favorites">
         <span>
@@ -20,6 +23,7 @@ const Nav = () => {
           FAVORITES
         </span>
       </button>
+      
       <span className="search-container">
         <input className="search" placeholder="search...">
         </input>

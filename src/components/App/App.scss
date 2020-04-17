@@ -11,39 +11,4 @@ main {
   background-color: #141023;
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-
-  .card-container {
-    width: 245px;
-    height: 380px;
-    background: linear-gradient(to right, $light-pink, $light-purple);
-    margin: 0;
-    border-radius: 10px;
-    padding: 1px;
-  }
-
-  .card {
-    width: 243px;
-    height: 378px;
-    margin: 0;
-    background: $dark-purple;
-    border-radius: 10px;
-  }
-
-  .buttons-container {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    margin: 2%;
-  }
-
-  .dashboard-buttons {
-    @include buttonStyle;
-    span {
-      @include buttonSpanStyle;
-    }
-  }
 }
