@@ -3,6 +3,7 @@ import { apiFetchRandomCard } from '../../apiCalls/apiCalls';
 import goblet from '../../icons/goblet.png';
 import whiteStar from '../../icons/white-star.png';
 import { Link } from 'react-router-dom';
+import Card from '../Card/Card';
 
 class RandomCard extends Component {
   constructor(props){

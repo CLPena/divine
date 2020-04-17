@@ -8,7 +8,6 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin: 2%;
   }
 
   .dashboard-buttons {
@@ -23,7 +22,7 @@
   width: 270px;
   height: 412px;
   background: linear-gradient(to right, $light-pink, $light-purple);
-  margin: 0;
+  margin: 1.7% 5%;
   border-radius: 10px;
   padding: 1px;
 }
