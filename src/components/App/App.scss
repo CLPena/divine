@@ -13,3 +13,12 @@ main {
   height: 100%;
   width: 100%;
 }
+
+body::-webkit-scrollbar {
+  width: .75em;
+  background-color: $transparent-purple;
+}
+
+body::webkit-scrollbar-track {
+  background-color: $dark-purple;
+}

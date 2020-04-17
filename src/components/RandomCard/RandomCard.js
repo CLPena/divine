@@ -8,7 +8,8 @@ import { apiFetchRandomCard } from '../../apiCalls/apiCalls';
 class RandomCard extends Component {
   getNewCard = () => {
     apiFetchRandomCard()
-    .then(randomCard => this.props.getRandomCard(randomCard.cards[0]))      .catch(err => console.log(err.message))
+    .then(randomCard => this.props.getRandomCard(randomCard.cards[0]))
+    .catch(err => console.log(err.message))
   }
 
   render() {
