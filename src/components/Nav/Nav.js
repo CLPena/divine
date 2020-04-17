@@ -16,14 +16,14 @@ const Nav = () => {
           </div>
         </button>
       </Link>
-
-      <button className="favorites">
-        <span>
-          <img className='star' src={star} alt='star icon'/>
-          FAVORITES
-        </span>
-      </button>
-      
+      <Link to="/favorites">
+        <button className="favorites">
+          <span>
+            <img className='star' src={star} alt='star icon'/>
+            FAVORITES
+          </span>
+        </button>
+      </Link>
       <span className="search-container">
         <input className="search" placeholder="search...">
         </input>

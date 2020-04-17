@@ -78,14 +78,11 @@
 .favorited {
   .white-star {
     filter: invert(100%);
-    &:hover {
-      filter: invert(0%);
-    }
   }
   .favorite-button {
     background: linear-gradient(to right, $light-pink, $light-purple);
     &:hover {
-      background: none;
+      opacity: .75;
     }
   }
 }
