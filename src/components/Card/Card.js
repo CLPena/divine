@@ -17,10 +17,7 @@ class Card extends Component {
       this.props.addFavorite(selectedCard)
     }
   }
-
-  checkIfFavorite = () => {
-  }
-
+  
   render() {
     let classes;
 

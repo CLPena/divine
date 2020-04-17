@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
-import { apiFetchAllCards } from '../../apiCalls/apiCalls';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
-import { addFavorite, deleteFavorite, getCards } from '../../actions';
+import { getCards } from '../../actions';
 
 class BrowseCards extends Component {
-  constructor(props){
-    super();
-  }
-
-  // componentDidMount = () => {
-  //   let cards;
-  //   apiFetchAllCards()
-  //   .then(data => cards = data)
-  //   .then(cards => this.props.getCards(cards.cards))
-  //   .catch(err => console.log(err.message))
-  // }
 
   render() {
     return (
