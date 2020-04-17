@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import goblet from '../../icons/goblet.png';
 import whiteStar from '../../icons/white-star.png';
-import { addFavorite } from '../../actions';
+import { addFavorite, deleteFavorite } from '../../actions';
 
 class Card extends Component {
 
@@ -12,7 +12,7 @@ class Card extends Component {
     let matchingCard = this.props.favorites.find(card => card.name === selectedCard.name);
 
     if(matchingCard){
-      console.log('matching', matchingCard)
+      this.props.deleteFavorite(selectedCard)
     } else {
       this.props.addFavorite(selectedCard)
     }
@@ -49,7 +49,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addFavorite: selectedCard => dispatch( addFavorite(selectedCard) )
+  addFavorite: selectedCard => dispatch( addFavorite(selectedCard) ),
+  deleteFavorite: selectedCard => dispatch( deleteFavorite(selectedCard) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);

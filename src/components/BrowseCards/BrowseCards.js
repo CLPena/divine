@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { apiFetchAllCards } from '../../apiCalls/apiCalls';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
-import { addFavorite, getCards } from '../../actions';
+import { addFavorite, deleteFavorite, getCards } from '../../actions';
 
 class BrowseCards extends Component {
   constructor(props){

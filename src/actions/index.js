@@ -12,3 +12,8 @@ export const addFavorite = (selectedCard) => ({
   type: 'ADD_FAVORITE',
   selectedCard
 })
+
+export const deleteFavorite = (selectedCard) => ({
+  type: 'DELETE_FAVORITE',
+  selectedCard
+})
