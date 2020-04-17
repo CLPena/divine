@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getRandomCard } from '../../actions';
 import { Route, Switch } from 'react-router-dom';
-
+import { getCards } from '../../actions';
 
 import Nav from '../Nav/Nav';
 import RandomCard from '../RandomCard/RandomCard';
@@ -45,11 +45,13 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  randomCard: state.randomCard
+  randomCard: state.randomCard,
+  favorites: state.favorites
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getRandomCard: randomCard => dispatch( getRandomCard(randomCard) )
+  getRandomCard: randomCard => dispatch( getRandomCard(randomCard) ),
+  getCards: cards => dispatch( getCards(cards) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

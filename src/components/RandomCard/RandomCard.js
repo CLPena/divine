@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { getRandomCard } from '../../actions';
+import { toggleFavorite } from '../../actions';
 import { apiFetchRandomCard } from '../../apiCalls/apiCalls';
 
 class RandomCard extends Component {
@@ -37,11 +38,13 @@ class RandomCard extends Component {
 
 
 const mapStateToProps = (state) => ({
-  randomCard: state.randomCard
+  randomCard: state.randomCard,
+  favorites: state.favorites
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getRandomCard: randomCard => dispatch( getRandomCard(randomCard) )
+  getRandomCard: randomCard => dispatch( getRandomCard(randomCard) ),
+  toggleFavorite: selectedCard => dispatch( toggleFavorite(selectedCard) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RandomCard);

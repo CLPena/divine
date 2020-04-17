@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { apiFetchAllCards } from '../../apiCalls/apiCalls';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
-// import { getCards } from '../../actions';
+import { toggleFavorite } from '../../actions';
 
 class BrowseCards extends Component {
   constructor(props){
@@ -35,6 +35,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   cards: state.cards,
+  favorites: state.favorites
   // userRatings: state.userRatings,
   // userInfo: state.userInfo
 })

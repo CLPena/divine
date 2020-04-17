@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import goblet from '../../icons/goblet.png';
 import whiteStar from '../../icons/white-star.png';
+import { toggleFavorite } from '../../actions';
 
 class Card extends Component {
+
+  toggleFavorite = (e) => {
+    e.preventDefault();
+    this.props.toggleFavorite(e.target.id)
+  }
 
   render() {
     return (
       <div className='card-container'>
-        <div className='card'>
+        <div className='card' >
           <h2>{this.props.name}</h2>
           <img src={goblet} className="goblet" alt="goblet" />
           <div className="suit-arcana">
@@ -17,8 +23,8 @@ class Card extends Component {
           </div>
           <h3>meaning:</h3>
           <p>{this.props.meaning_up}</p>
-          <button className="favorite-button">
-            <img src={whiteStar} className="white-star" alt="favorite-card" />
+          <button className="favorite-button" onClick={this.toggleFavorite}>
+            <img id={this.props.name} src={whiteStar} className="white-star" alt="favorite-card" />
           </button>
         </div>
       </div>
@@ -30,11 +36,12 @@ class Card extends Component {
 
 
 const mapStateToProps = (state) => ({
-  randomCard: state.randomCard
+  randomCard: state.randomCard,
+  favorites: state.favorites
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  // getRandomCard: randomCard => dispatch( getRandomCard(randomCard) )
+  toggleFavorite: selectedCard => dispatch( toggleFavorite(selectedCard) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
