@@ -52,9 +52,19 @@
     border: none;
   }
 
+  .white-star {
+    &:hover {
+      filter: invert(100%)
+    }
+  }
+
   .favorite-button {
     position: absolute;
     right: 10px;
     bottom: 10px;
+    border-radius: 100%;
+    &:hover {
+      background: linear-gradient(to right, $light-pink, $light-purple);
+    }
   }
 }
