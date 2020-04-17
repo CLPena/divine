@@ -1,0 +1,91 @@
+.card-container {
+  width: 270px;
+  height: 412px;
+  background: linear-gradient(to right, $light-pink, $light-purple);
+  margin: 1.7% 5%;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+.card {
+  width: 268px;
+  height: 410px;
+  margin: 0;
+  background: $dark-purple;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 8px;
+  position: absolute;
+  overflow: hidden;
+
+  h3, h2 {
+    color: $light-purple;
+    margin: 5px 0;
+  }
+
+  .suit-arcana {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  p {
+    color: $periwinkle;
+    text-align: center;
+    font-size: 16px;
+    max-height: 190px;
+    overflow-y: auto;
+  }
+
+  p::-webkit-scrollbar {
+    width: .3em;
+    background-color: $transparent-purple;
+  }
+
+  .goblet {
+    height: 58px;
+    width: 58px;
+    margin: 3px;
+  }
+
+  .favorite-button, .white-star {
+    height: 30px;
+    width: 30px;
+    background: none;
+    border: none;
+  }
+
+  .white-star {
+    &:hover {
+      filter: invert(100%)
+    }
+  }
+
+  .favorite-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 100%;
+    &:hover {
+      background: linear-gradient(to right, $light-pink, $light-purple);
+    }
+  }
+}
+
+.favorited {
+  .white-star {
+    filter: invert(100%);
+    &:hover {
+      filter: invert(0%);
+    }
+  }
+  .favorite-button {
+    background: linear-gradient(to right, $light-pink, $light-purple);
+    &:hover {
+      background: none;
+    }
+  }
+}

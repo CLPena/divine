@@ -3,12 +3,22 @@
 *:before {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
+  background-color: #141023;
 }
 
 main {
   background-color: #141023;
   height: 100%;
   width: 100%;
+}
+
+body::-webkit-scrollbar {
+  width: .75em;
+  background-color: $transparent-purple;
+}
+
+body::webkit-scrollbar-track {
+  background-color: $dark-purple;
 }
