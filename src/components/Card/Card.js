@@ -18,10 +18,21 @@ class Card extends Component {
     }
   }
 
+  checkIfFavorite = () => {
+  }
+
   render() {
+    let classes;
+
+    if(this.props.favorites.find(card => card.name === this.props.name)) {
+      classes="favorited card"
+    } else {
+      classes="card"
+    }
+
     return (
       <div className='card-container'>
-        <div className='card' >
+        <div className={classes}>
           <h2>{this.props.name}</h2>
           <img src={goblet} className="goblet" alt="goblet" />
           <div className="suit-arcana">
