@@ -7,6 +7,7 @@ import { getCards } from '../../actions';
 import Nav from '../Nav/Nav';
 import RandomCard from '../RandomCard/RandomCard';
 import BrowseCards from '../BrowseCards/BrowseCards';
+import Favorites from '../Favorites/Favorites';
 
 import { apiFetchRandomCard, apiFetchAllCards } from '../../apiCalls/apiCalls';
 
@@ -41,6 +42,13 @@ class App extends Component {
             path="/browse"
             render={() => (
               <BrowseCards />
+            )}
+          />
+
+          <Route
+            path="/favorites"
+            render={() => (
+              <Favorites />
             )}
           />
 
