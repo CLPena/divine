@@ -12,7 +12,7 @@ class Card extends Component {
           <h2>{this.props.name}</h2>
           <img src={goblet} className="goblet" alt="goblet" />
           <div className="suit-arcana">
-          <h3>{this.props.type}</h3>
+            <h3>{this.props.type} arcana</h3>
             <h3 >{this.props.suit || `trump card`}</h3>
           </div>
           <h3>meaning:</h3>
