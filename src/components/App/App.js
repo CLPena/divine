@@ -42,8 +42,8 @@ class App extends Component {
       </main>
     );
   }
-
 }
+
 const mapStateToProps = (state) => ({
   randomCard: state.randomCard
 });
