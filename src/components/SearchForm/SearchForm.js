@@ -25,16 +25,18 @@ class SearchForm extends Component {
     );
     if(results.length) {
       this.props.search(results);
+      this.setState({ searchTerm: '' })
       this.props.history.push('/search')
     } else {
-      this.setState({ classes: 'no-results' })
+      this.setState({ searchTerm: '', classes: 'no-results' })
+      this.props.search([])
     }
   }
 
   render() {
     return (
       <form className="search-container">
-        <input className="search" placeholder="search..." onChange={this.handleChange}>
+        <input className="search" placeholder="search..." onChange={this.handleChange} value={this.state.searchTerm}>
         </input>
         <button type="submit" className="search-button" onClick={this.handleSubmit}><img className='planet' src={planet} alt='search icon'/></button>
         <p className={this.state.classes}>Sorry, no matches found!</p>
