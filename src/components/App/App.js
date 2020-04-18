@@ -8,7 +8,6 @@ import Nav from '../Nav/Nav';
 import RandomCard from '../RandomCard/RandomCard';
 import BrowseCards from '../BrowseCards/BrowseCards';
 import Favorites from '../Favorites/Favorites';
-import SearchForm from '../SearchForm/SearchForm';
 import SearchResults from '../SearchResults/SearchResults';
 
 import { apiFetchRandomCard, apiFetchAllCards } from '../../apiCalls/apiCalls';
@@ -19,10 +18,8 @@ class App extends Component {
     .then(randomCard => this.props.getRandomCard(randomCard.cards[0]))
     .catch(err => console.log(err.message))
 
-    let cards;
     apiFetchAllCards()
-    .then(data => cards = data)
-    .then(cards => this.props.getCards(cards.cards))
+    .then(data => this.props.getCards(data.cards))
     .catch(err => console.log(err.message))
   }
 
