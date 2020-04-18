@@ -42,6 +42,7 @@ class App extends Component {
 
           <Route
             path="/browse"
+            exact
             render={() => (
               <BrowseCards />
             )}
@@ -49,6 +50,7 @@ class App extends Component {
 
           <Route
             path="/favorites"
+            exact
             render={() => (
               <Favorites />
             )}
@@ -56,9 +58,17 @@ class App extends Component {
 
           <Route
             path="/search"
+            exact
             render={() => (
               <SearchResults />
             )}
+          />
+
+          <Route
+          path="*"
+          render={() => (
+            <RandomCard />
+          )}
           />
 
         </Switch>
