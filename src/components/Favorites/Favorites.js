@@ -6,11 +6,19 @@ import { getCards } from '../../actions';
 class Favorites extends Component {
 
   render() {
+    let favs;
+    if(this.props.favorites.length){
+      favs = this.props.favorites.map(card => {
+        return <Card key={card.name} name={card.name} suit={card.suit} type={card.type} meaning_up={card.meaning_up}/>
+      })
+    } else {
+      favs = <h3>You have no favorites (yet)!</h3>
+    }
+
     return (
       <div className="favorites-dashboard">
-        {this.props.favorites.map(card => {
-          return <Card key={card.name} name={card.name} suit={card.suit} type={card.type} meaning_up={card.meaning_up}/>
-        })}
+      <h2> FAVORITES: </h2>
+        {favs}
       </div>
     );
   }

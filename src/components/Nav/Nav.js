@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../../icons/moon.png';
 import star from '../../icons/white-star.png';
-import planet from '../../icons/planet.png'
 import { Link } from 'react-router-dom';
+import SearchForm from '../SearchForm/SearchForm'
 
 const Nav = () => {
   return (
@@ -24,11 +24,7 @@ const Nav = () => {
           </span>
         </button>
       </Link>
-      <span className="search-container">
-        <input className="search" placeholder="search...">
-        </input>
-        <button className="search-button"><img className='planet' src={planet} alt='search icon'/></button>
-      </span>
+      <SearchForm />
     </header>
   );
 }

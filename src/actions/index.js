@@ -17,3 +17,8 @@ export const deleteFavorite = (selectedCard) => ({
   type: 'DELETE_FAVORITE',
   selectedCard
 })
+
+export const search = (results) => ({
+  type: 'SEARCH',
+  results
+})

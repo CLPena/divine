@@ -1,0 +1,50 @@
+.search-container {
+  width: 265px;
+}
+
+.search {
+  width: 198px;
+  height: 50px;
+  margin: 10px;
+  border: none;
+  border-bottom: 2px solid;
+  border-image-source: linear-gradient(to right, $light-pink, $light-purple);
+  border-image-slice: 1;
+  background: none;
+  padding-left: 1em;
+  font-size: 1em;
+  color: $light-pink;
+}
+
+.search-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button {
+  height: 45px;
+  width: 45px;
+  padding: 0;
+  background: $dark-purple;
+  border: none;
+}
+
+.planet {
+  height: 45px;
+  width: 45px;
+  margin: 0;
+}
+
+.no-results {
+  width: 100%;
+  margin: 2px;
+  padding: 2px 2px 2px 16px;
+  text-align: left;
+  color: $periwinkle;
+}
+
+.hidden {
+  visibility: hidden;
+}
