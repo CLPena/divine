@@ -2,7 +2,7 @@ header {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  padding: 15px 20px 0 20px;
+  padding: 12px 20px 0 20px;
   position: sticky;
   top: 0px;
   z-index: 9999;
@@ -12,6 +12,7 @@ header {
 
   a {
     text-decoration: none;
+    margin: 0;
   }
 
   .logo {
