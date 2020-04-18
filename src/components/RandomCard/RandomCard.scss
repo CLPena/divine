@@ -8,6 +8,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    margin: 0;
   }
 
   .dashboard-buttons {
@@ -15,5 +16,6 @@
     span {
       @include buttonSpanStyle;
     }
+    margin-top: 2px !important;
   }
 }

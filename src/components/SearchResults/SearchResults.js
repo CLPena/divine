@@ -3,26 +3,25 @@ import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { getCards } from '../../actions';
 
-class Favorites extends Component {
+class SearchResults extends Component {
 
   render() {
-    let favs;
-    if(this.props.favorites.length){
-      favs = this.props.favorites.map(card => {
+    let results;
+    if(this.props.search.length){
+      results = this.props.search.map(card => {
         return <Card key={card.name} name={card.name} suit={card.suit} type={card.type} meaning_up={card.meaning_up}/>
       })
     } else {
-      favs = <h3>You have no favorites (yet)!</h3>
+      results = <h3>No matching cards!</h3>
     }
 
     return (
-      <div className="favorites-dashboard">
-      <h2> FAVORITES: </h2>
-        {favs}
+      <div className="search-dashboard">
+      <h2> RESULTS: </h2>
+        {results}
       </div>
     );
   }
-
 }
 
 const mapDispatchToProps = (dispatch) => ({
@@ -31,7 +30,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   cards: state.cards,
-  favorites: state.favorites
+  favorites: state.favorites,
+  search: state.search
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);

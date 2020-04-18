@@ -8,6 +8,8 @@ import Nav from '../Nav/Nav';
 import RandomCard from '../RandomCard/RandomCard';
 import BrowseCards from '../BrowseCards/BrowseCards';
 import Favorites from '../Favorites/Favorites';
+import SearchForm from '../SearchForm/SearchForm';
+import SearchResults from '../SearchResults/SearchResults';
 
 import { apiFetchRandomCard, apiFetchAllCards } from '../../apiCalls/apiCalls';
 
@@ -40,6 +42,7 @@ class App extends Component {
 
           <Route
             path="/browse"
+            exact
             render={() => (
               <BrowseCards />
             )}
@@ -47,9 +50,25 @@ class App extends Component {
 
           <Route
             path="/favorites"
+            exact
             render={() => (
               <Favorites />
             )}
+          />
+
+          <Route
+            path="/search"
+            exact
+            render={() => (
+              <SearchResults />
+            )}
+          />
+
+          <Route
+          path="*"
+          render={() => (
+            <RandomCard />
+          )}
           />
 
         </Switch>
