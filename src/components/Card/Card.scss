@@ -11,7 +11,7 @@
   width: 268px;
   height: 410px;
   margin: 0;
-  background: $dark-purple;
+  background: linear-gradient(10deg, rgba(30, 24, 52, 1) 0%, rgba(45,40,62,1) 50%, rgba(59,52,81,1) 100%);
   border-radius: 10px;
   display: flex;
   flex-flow: column nowrap;
@@ -21,8 +21,9 @@
   overflow: hidden;
 
   h3, h2 {
-    color: $light-purple;
+    color: $light-pink;
     margin: 5px 0;
+    background: none;
   }
 
   .suit-arcana {
@@ -30,6 +31,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    background: none;
   }
 
   p {
@@ -38,6 +40,7 @@
     font-size: 16px;
     max-height: 190px;
     overflow-y: auto;
+    background: none;
   }
 
   p::-webkit-scrollbar {
@@ -49,6 +52,7 @@
     height: 58px;
     width: 58px;
     margin: 3px;
+    background: none;
   }
 
   .favorite-button, .white-star {
