@@ -8,16 +8,20 @@ DIVINE is a virtual tarot deck for beginners who don't want to invest in buying 
 
 #### Screenshots
 ![Dashboard](URL)
+
 ![Browse Page](URL)
+
 ![Favorites Page](URL)
 
 #### In Action
 ![Random Card, Browse Cards, and Favorites Gif](URL)
+
 ![Search Gif](URL)
 
 
 #### Technologies Used
 Development: Redux, React.js, Scss/Sass
+
 Testing: Jest, React Testing Library
 
 #### Wireframe
