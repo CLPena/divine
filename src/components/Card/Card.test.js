@@ -23,22 +23,39 @@ describe('Card', () => {
     </Provider>;
   })
 
-  it('should render the correct information on each card', () => {
-    const { getByText, getByAltText } = render(testWrapper)
-
+  it('should render the correct name on the card', () => {
+    const { getByText } = render(testWrapper)
     const nameEl = getByText("Page of Pentacles");
-    const suitEl = getByText("pentacles");
-    const typeEl = getByText("minor arcana");
-    const meaningEl = getByText("Application, study, scholarship, reflection another reading says news, messages and the bringer thereof; also rule, management.");
-    const favoriteBtn = getByAltText("favorite-card");
-    const icon = getByAltText("goblet");
-
     expect(nameEl).toBeInTheDocument();
+  });
+
+  it('should render the correct suit on the card', () => {
+    const { getByText } = render(testWrapper)
+    const suitEl = getByText("pentacles");
     expect(suitEl).toBeInTheDocument();
+  });
+
+  it('should render the correct type on the card', () => {
+    const { getByText } = render(testWrapper)
+    const typeEl = getByText("minor arcana");
     expect(typeEl).toBeInTheDocument();
+  });
+
+  it('should render the correct meaning on the card', () => {
+    const { getByText } = render(testWrapper)
+    const meaningEl = getByText("Application, study, scholarship, reflection another reading says news, messages and the bringer thereof; also rule, management.");
     expect(meaningEl).toBeInTheDocument();
+  });
+
+  it('should render with the goblet icon on the card', () => {
+    const { getByAltText } = render(testWrapper)
+    const icon = getByAltText("goblet");
     expect(icon).toBeInTheDocument();
+  });
+
+  it('should render with a favorite button on the card', () => {
+    const { getByAltText } = render(testWrapper)
+    const favoriteBtn = getByAltText("favorite-card");
     expect(favoriteBtn).toBeInTheDocument();
   });
-    
 });
