@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### DIVINE
 
-## Available Scripts
+#### Abstract
+DIVINE is a virtual tarot deck for beginners who don't want to invest in buying a physical deck and memorizing all the card meanings. The app allows beginners to instantly get their first reading, without bogging them down with extra information. These cards are simply designed and have the name, type, suit, and description for the card. Upon opening the app, the user is given a random card. They can take this as their daily reading, or they can click "Draw A Card" to randomly pull a card. The user is able to search for cards by name or terms in the description. Cards can be favorited and viewed on the favorites page. The user may favorite or un-favorite a card from any page and it will be updated accurately in the store and on the DOM.
 
-In the project directory, you can run:
+#### Contributors
+[Cristina Peña](https://github.com/CLPena)
 
-### `npm start`
+#### Screenshots
+![Dashboard](URL)
+![Browse Page](URL)
+![Favorites Page](URL)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### In Action
+![Random Card, Browse Cards, and Favorites Gif](URL)
+![Search Gif](URL)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+#### Technologies Used
+Development: Redux, React.js, Scss/Sass
+Testing: Jest, React Testing Library
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Wireframe
+The wireframe for this project can be viewed on [Figma](https://www.figma.com/file/GOAV18OUrx45oj2WUqfal0/DIVINE?node-id=0%3A1).
 
-### `npm run build`
+#### Project Next Steps
+- Modal on dashboard with instructions on using random card generator
+- Different images for cards of different suits/types
+- User login that allows users to save their favorites
+- Multiple-card reading spreads
+- Ability to save spraeds and record notes
+- Page where the user can view saved spreads
+- I am also exploring the possibility of setting up my own API with card information and learning Vue and GraphQl to refactor the app using these technologies.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### Setup
+Fork and clone down this repo.
+Once you have cloned the repo, change into the directory.
+To view the application, run npm and open the provided localhost url in the browser.
