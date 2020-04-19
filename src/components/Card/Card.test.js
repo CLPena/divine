@@ -54,8 +54,8 @@ describe('Card', () => {
   });
 
   it('should render with a favorite button on the card', () => {
-    const { getByAltText } = render(testWrapper)
-    const favoriteBtn = getByAltText("favorite-card");
+    const { getByTestId } = render(testWrapper)
+    const favoriteBtn = getByTestId("favorite-Page of Pentacles");
     expect(favoriteBtn).toBeInTheDocument();
   });
 });

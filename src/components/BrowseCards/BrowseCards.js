@@ -7,7 +7,7 @@ class BrowseCards extends Component {
 
   render() {
     return (
-      <div className="browse-dashboard">
+      <div className="browse-dashboard" data-testid="browse-dashboard">
         {this.props.cards.map(card => {
           return <Card key={card.name} name={card.name} suit={card.suit} type={card.type} meaning_up={card.meaning_up}/>
         })}

@@ -17,7 +17,7 @@ class Card extends Component {
       this.props.addFavorite(selectedCard)
     }
   }
-  
+
   render() {
     let classes;
 
@@ -38,7 +38,7 @@ class Card extends Component {
           </div>
           <h3>meaning:</h3>
           <p>{this.props.meaning_up}</p>
-          <button className="favorite-button" onClick={this.toggleFavorite}>
+          <button data-testid={`favorite-${this.props.name}`} className="favorite-button" onClick={this.toggleFavorite}>
             <img id={this.props.name} src={whiteStar} className="white-star" alt="favorite-card" />
           </button>
         </div>
