@@ -37,6 +37,6 @@ The wireframe for this project can be viewed on [Figma](https://www.figma.com/fi
 - I am also exploring the possibility of setting up my own API with card information and learning Vue and GraphQl to refactor the app using these technologies.
 
 #### Setup
-Fork and clone down this repo.
-Once you have cloned the repo, change into the directory.
-To view the application, run npm and open the provided localhost url in the browser.
+- Fork and clone down this repo.
+- Once you have cloned the repo, change into the directory.
+- To view the application, run npm and open the provided localhost url in the browser.
