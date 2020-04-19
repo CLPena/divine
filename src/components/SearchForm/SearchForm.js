@@ -20,9 +20,10 @@ class SearchForm extends Component {
   handleSubmit = (e) => {
     this.setState({ classes: 'no-results hidden' })
     e.preventDefault();
-    let searchTerm = this.state.searchTerm;
-    let results = this.props.cards.filter(card => card.name.includes(searchTerm) || card.meaning_up.includes(searchTerm)
+    let searchTerm = this.state.searchTerm.toUpperCase();
+    let results = this.props.cards.filter(card => card.name.toUpperCase().includes(searchTerm) || card.meaning_up.toUpperCase().includes(searchTerm)
     );
+
     if(results.length) {
       this.props.search(results);
       this.setState({ searchTerm: '' })
