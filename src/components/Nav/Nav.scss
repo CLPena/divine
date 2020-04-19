@@ -30,18 +30,28 @@ header {
     border: none;
     display: flex;
     flex-flow: row nowrap;
+    &:hover {
+      background: rgba(255, 255, 255, .1)	;
+      border-radius: 10px;
+    }
+  }
+
+  .nav-text {
+    background: none;
   }
 
   h1 {
     color: $light-pink;
     font-size: 46px;
     letter-spacing: 1px;
+    background: none;
   }
 
   h3 {
     color: $light-purple;
     font-size: 18px;
     letter-spacing: 2px;
+    background: none;
   }
 
   .star {
