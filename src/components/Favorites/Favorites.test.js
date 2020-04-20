@@ -1,9 +1,33 @@
 import React from 'react';
+import Favorites from './Favorites.js';
 import { render } from '@testing-library/react';
-import App from './App';
+import '@testing-library/jest-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { rootReducer } from '../../reducers/index';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('Favorites', () => {
+  let testStore;
+  let testWrapper;
+
+  beforeEach(() => {
+    testStore = createStore(rootReducer);
+    testWrapper = <Provider store={testStore}><Favorites /></Provider>;
+  })
+
+  it('Should render on the dashboard', () => {
+    const { getByText } = render(testWrapper);
+    const container = getByText("FAVORITES:")
+    expect(container).toBeInTheDocument();
+  })
+
+  it('Should render with no favorites by default', () => {
+    const { getByText } = render(testWrapper);
+    const message = getByText("You have no favorites (yet)!")
+    expect(message).toBeInTheDocument();
+  })
+
+
+
+
+})
