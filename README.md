@@ -13,9 +13,9 @@ DIVINE is a virtual tarot deck for beginners who don't want to invest in buying 
 ![Favorites Page](https://i.imgur.com/HxeML8I.png)
 
 #### In Action
-![Random Card, Browse Cards, and Favorites Gif](URL)
+![Random Card, Browse Cards, and Favorites Gif](https://i.imgur.com/gtYk0rK.gif)
 
-![Search Gif](URL)
+![Search Gif](https://i.imgur.com/02eY3jS.gif)
 
 
 #### Technologies Used
