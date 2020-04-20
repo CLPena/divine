@@ -1,78 +1,85 @@
 .card-container {
-  width: 270px;
-  height: 412px;
   background: linear-gradient(to right, $light-pink, $light-purple);
-  margin: 1.7% 5%;
   border-radius: 10px;
+  height: 412px;
+  margin: 1.7% 5%;
   padding: 1px;
+  width: 270px;
 }
 
 .card {
-  width: 268px;
-  height: 410px;
-  margin: 0;
-  background: linear-gradient(10deg, rgba(30, 24, 52, 1) 0%, rgba(45,40,62,1) 50%, rgba(59,52,81,1) 100%);
+  align-items: center;
+  background: linear-gradient(
+    10deg,
+    rgba(30, 24, 52, 1) 0%,
+    rgba(45, 40, 62, 1) 50%,
+    rgba(59, 52, 81, 1) 100%
+  );
   border-radius: 10px;
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  height: 410px;
+  margin: 0;
+  overflow: hidden;
   padding: 8px;
   position: absolute;
-  overflow: hidden;
+  width: 268px;
 
-  h3, h2 {
+  h3,
+  h2 {
+    background: none;
     color: $light-pink;
     margin: 5px 0;
-    background: none;
   }
 
   .suit-arcana {
-    width: 100%;
+    background: none;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    background: none;
+    width: 100%;
   }
 
   p {
+    background: none;
     color: $periwinkle;
-    text-align: center;
     font-size: 16px;
     max-height: 190px;
     overflow-y: auto;
-    background: none;
+    text-align: center;
   }
 
   p::-webkit-scrollbar {
-    width: .3em;
     background-color: $transparent-purple;
+    width: 0.3em;
   }
 
   .goblet {
-    height: 58px;
-    width: 58px;
-    margin: 3px;
     background: none;
+    height: 58px;
+    margin: 3px;
+    width: 58px;
   }
 
-  .favorite-button, .white-star {
-    height: 30px;
-    width: 30px;
+  .favorite-button,
+  .white-star {
     background: none;
     border: none;
+    height: 30px;
+    width: 30px;
   }
 
   .white-star {
     &:hover {
-      filter: invert(100%)
+      filter: invert(100%);
     }
   }
 
   .favorite-button {
+    border-radius: 100%;
+    bottom: 10px;
     position: absolute;
     right: 10px;
-    bottom: 10px;
-    border-radius: 100%;
     &:hover {
       background: linear-gradient(to right, $light-pink, $light-purple);
     }
@@ -86,7 +93,7 @@
   .favorite-button {
     background: linear-gradient(to right, $light-pink, $light-purple);
     &:hover {
-      opacity: .75;
+      opacity: 0.75;
     }
   }
 }

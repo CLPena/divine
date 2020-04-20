@@ -3,54 +3,54 @@
 }
 
 .search {
-  width: 198px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, $light-pink, $light-purple);
+  border-radius: 10px;
+  color: $light-pink;
+  font-size: 1em;
   height: 50px;
   margin: 10px;
-  border: none;
-  border-radius: 10px;
-  border-bottom: 2px solid;
-  border-image-source: linear-gradient(to right, $light-pink, $light-purple);
-  border-image-slice: 1;
-  background: none;
   padding-left: 1em;
-  font-size: 1em;
-  color: $light-pink;
+  width: 198px;
   &:hover {
-    background: rgba(255, 255, 255, .1)	;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 
 .search-container {
+  align-items: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
 }
 
 .search-button {
-  height: 45px;
-  width: 45px;
-  padding: 3px;
   background: $dark-purple;
   border: none;
+  height: 45px;
+  padding: 3px;
+  width: 45px;
 }
 
 .planet {
   height: 45px;
-  width: 45px;
   margin: 0;
+  width: 45px;
   &:hover {
-    background: rgba(255, 255, 255, .1)	;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 100%;
   }
 }
 
 .no-results {
-  width: 100%;
+  color: $periwinkle;
   margin: 2px;
   padding: 2px 2px 2px 16px;
   text-align: left;
-  color: $periwinkle;
+  width: 100%;
 }
 
 .hidden {

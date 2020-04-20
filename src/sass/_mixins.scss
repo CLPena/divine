@@ -1,35 +1,39 @@
 @mixin buttonStyle {
   background: linear-gradient(to right, $light-pink, $light-purple);
+  border: none;
   border-radius: 10px;
   color: $light-pink;
   font-size: 20px;
-  padding: 1px;
-  text-decoration: none;
-  border: none;
-  width: 270px;
   height: 50px;
   margin: 10px;
+  padding: 1px;
+  text-decoration: none;
+  width: 270px;
 
   &:hover {
-    transition: 1s;
-    cursor: pointer;
     background: $dark-purple;
+    cursor: pointer;
+    transition: 1s;
   }
 }
 
 @mixin buttonSpanStyle {
+  align-items: center;
   background: $dark-purple;
   border-radius: 10px;
-  width: 268px;
-  height: 48px;
   display: flex;
   flex-flow: row nowrap;
+  height: 48px;
   justify-content: center;
-  align-items: center;
+  width: 268px;
 
   &:hover {
+    background: linear-gradient(
+      256.25deg,
+      $transparent-pink 0.36%,
+      $transparent-purple 97.78%
+    );
+    color: #ffffff;
     transition: 1s;
-    background: linear-gradient(256.25deg, $transparent-pink 0.36%, $transparent-purple 97.78%);
-    color: #FFFFFF;
   }
 }

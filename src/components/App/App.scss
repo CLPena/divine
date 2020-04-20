@@ -1,11 +1,11 @@
 *,
 *:after,
 *:before {
+  background-color: #141023;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #141023;
 }
 
 main {
@@ -14,8 +14,8 @@ main {
 }
 
 body::-webkit-scrollbar {
-  width: .75em;
   background-color: $transparent-purple;
+  width: 0.75em;
 }
 
 body::webkit-scrollbar-track {
