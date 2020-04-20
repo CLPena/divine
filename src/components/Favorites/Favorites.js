@@ -24,7 +24,7 @@ class Favorites extends Component {
     }
 
     return (
-      <div className="favorites-dashboard">
+      <div className="favorites-dashboard" data-testid="favorites-dashboard">
         <h2> FAVORITES: </h2>
         {favs}
       </div>
