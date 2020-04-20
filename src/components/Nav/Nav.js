@@ -17,7 +17,7 @@ const Nav = () => {
         </button>
       </Link>
       <Link to="/favorites">
-        <button className="favorites">
+        <button className="favorites" data-testid="favorites">
           <span>
             <img className='star' src={star} alt='star icon'/>
             FAVORITES
