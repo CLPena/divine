@@ -33,7 +33,7 @@ class SearchResults extends Component {
 }
 
 SearchResults.propTypes = {
-  search: PropTypes.func,
+  search: PropTypes.array,
   cards: PropTypes.array,
   favorites: PropTypes.array,
   getCards: PropTypes.func,
@@ -42,7 +42,7 @@ SearchResults.propTypes = {
 const mapStateToProps = (state) => ({
   cards: state.cards,
   favorites: state.favorites,
-  search: state.search,
+  search: state.search
 });
 
 const mapDispatchToProps = (dispatch) => ({
