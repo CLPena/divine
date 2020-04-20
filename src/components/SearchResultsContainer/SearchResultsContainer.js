@@ -42,11 +42,14 @@ SearchResultsContainer.propTypes = {
 const mapStateToProps = (state) => ({
   cards: state.cards,
   favorites: state.favorites,
-  search: state.search
+  search: state.search,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getCards: (cards) => dispatch(getCards(cards)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResultsContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchResultsContainer);
