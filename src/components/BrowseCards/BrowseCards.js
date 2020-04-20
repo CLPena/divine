@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { getCards } from '../../actions';
+import PropTypes from 'prop-types';
 
 class BrowseCards extends Component {
 
@@ -14,7 +15,12 @@ class BrowseCards extends Component {
       </div>
     );
   }
+}
 
+BrowseCards.propTypes = {
+  favorites: PropTypes.array,
+  cards: PropTypes.array,
+  getCards: PropTypes.func
 }
 
 const mapDispatchToProps = (dispatch) => ({

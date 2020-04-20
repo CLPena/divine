@@ -4,6 +4,7 @@ import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { addFavorite, deleteFavorite, getRandomCard } from '../../actions';
 import { apiFetchRandomCard } from '../../apiCalls/apiCalls';
+import PropTypes from 'prop-types';
 
 class RandomCard extends Component {
   getNewCard = () => {
@@ -35,6 +36,13 @@ class RandomCard extends Component {
   }
 }
 
+RandomCard.propTypes = {
+  getRandomCard: PropTypes.func,
+  addFavorite: PropTypes.func,
+  deleteFavorite: PropTypes.func,
+  cards: PropTypes.array,
+  favorites: PropTypes.array,
+}
 
 const mapStateToProps = (state) => ({
   randomCard: state.randomCard,

@@ -9,6 +9,7 @@ import RandomCard from '../RandomCard/RandomCard';
 import BrowseCards from '../BrowseCards/BrowseCards';
 import Favorites from '../Favorites/Favorites';
 import SearchResults from '../SearchResults/SearchResults';
+import PropTypes from 'prop-types';
 
 import { apiFetchRandomCard, apiFetchAllCards } from '../../apiCalls/apiCalls';
 
@@ -72,6 +73,13 @@ class App extends Component {
       </main>
     );
   }
+}
+
+App.propTypes = {
+  randomCard: PropTypes.object,
+  favorites: PropTypes.array,
+  getRandomCard: PropTypes.func,
+  getCards: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({

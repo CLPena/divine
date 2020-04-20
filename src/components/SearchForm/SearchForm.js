@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { search } from '../../actions';
 import planet from '../../icons/planet.png'
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class SearchForm extends Component {
   constructor() {
@@ -46,6 +47,11 @@ class SearchForm extends Component {
   }
 }
 
+SearchForm.propTypes = {
+  search: PropTypes.func,
+  cards: PropTypes.array,
+  favorites: PropTypes.array,
+}
 
 const mapDispatchToProps = (dispatch) => ({
   search: results => dispatch( search(results) )

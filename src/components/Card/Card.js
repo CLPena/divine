@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import goblet from '../../icons/goblet.png';
 import whiteStar from '../../icons/white-star.png';
 import { addFavorite, deleteFavorite } from '../../actions';
+import PropTypes from 'prop-types';
 
 class Card extends Component {
 
@@ -48,7 +49,13 @@ class Card extends Component {
 
 }
 
-
+Card.propTypes = {
+  randomCard: PropTypes.object,
+  favorites: PropTypes.array,
+  cards: PropTypes.array,
+  addFavorite: PropTypes.func,
+  deleteFavorite: PropTypes.func
+}
 
 const mapStateToProps = (state) => ({
   randomCard: state.randomCard,

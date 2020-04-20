@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { getCards } from '../../actions';
+import PropTypes from 'prop-types';
 
 class SearchResults extends Component {
 
@@ -22,6 +23,13 @@ class SearchResults extends Component {
       </div>
     );
   }
+}
+
+SearchResults.propTypes = {
+  search: PropTypes.func,
+  cards: PropTypes.array,
+  favorites: PropTypes.array,
+  getCards: PropTypes.func
 }
 
 const mapDispatchToProps = (dispatch) => ({
