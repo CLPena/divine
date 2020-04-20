@@ -22,10 +22,13 @@ describe("App", () => {
 
   beforeEach(() => {
     apiFetchRandomCard.mockResolvedValueOnce({
-      cards: [{ name: "First Card" }],
+      cards: [{ name: "First Card", meaning_up: "First meaning" }],
     });
     apiFetchAllCards.mockResolvedValueOnce({
-      cards: [{ name: "First Card" }, { name: "Second Card" }],
+      cards: [
+        { name: "First Card", meaning_up: "First meaning" },
+        { name: "Second Card", meaning_up: "Second meaning" },
+      ],
     });
 
     const history = createMemoryHistory();
@@ -94,9 +97,66 @@ describe("App", () => {
     expect(queryByTestId("favorite-Second Card")).toBeNull();
   });
 
-  it("should allow a user to enter a term into the search bar", async () => {
-    const { getByPlaceholderText, getByTestId, queryByTestId } = utils;
-    fireEvent.keyDown(getByPlaceholderText("search..."), { key: 'T'});
-    // expect(queryByTestId("favorite-Second Card")).toBeNull();
+  it("should allow a user to enter text into the search bar", async () => {
+    const { getByPlaceholderText, getByText } = utils;
+    fireEvent.change(getByPlaceholderText("search..."), {
+      target: { value: "First Card" },
+    });
+    expect(getByText("First Card")).toBeInTheDocument();
+  });
+
+  it("should submit a search and display matching results", async () => {
+    const {
+      getByPlaceholderText,
+      getByTestId,
+      getByText,
+      queryByTestId,
+    } = utils;
+    fireEvent.change(getByPlaceholderText("search..."), {
+      target: { value: "First Card" },
+    });
+    fireEvent.click(getByTestId("search-button"));
+    expect(getByText("First Card")).toBeInTheDocument();
+  });
+
+  it("should submit a search and not display non-matching results", async () => {
+    const { getByPlaceholderText, getByTestId, queryByText } = utils;
+    fireEvent.change(getByPlaceholderText("search..."), {
+      target: { value: "First Card" },
+    });
+    fireEvent.click(getByTestId("search-button"));
+    expect(queryByText("Second Card")).toBeNull();
+  });
+
+  it("should redirect to the search results page when a valid search is submitted", async () => {
+    const {
+      getByPlaceholderText,
+      getByTestId,
+      getByText,
+      queryByTestId,
+    } = utils;
+    fireEvent.change(getByPlaceholderText("search..."), {
+      target: { value: "First Card" },
+    });
+    fireEvent.click(getByTestId("search-button"));
+    expect(getByText("RESULTS:")).toBeInTheDocument();
+  });
+
+  it("should submit a search and display error message if no matching results", async () => {
+    const { getByPlaceholderText, getByTestId, getByText } = utils;
+    fireEvent.change(getByPlaceholderText("search..."), {
+      target: { value: "No!" },
+    });
+    fireEvent.click(getByTestId("search-button"));
+    expect(getByText("Sorry, no matches found!")).toBeInTheDocument();
+  });
+
+  it("should stay on main dashboard if there are no matching results to search", async () => {
+    const { getByPlaceholderText, getByTestId, getByText } = utils;
+    fireEvent.change(getByPlaceholderText("search..."), {
+      target: { value: "No!" },
+    });
+    fireEvent.click(getByTestId("search-button"));
+    expect(getByText("DRAW A CARD")).toBeInTheDocument();
   });
 });
