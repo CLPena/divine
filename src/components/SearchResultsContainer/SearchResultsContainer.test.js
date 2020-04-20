@@ -1,12 +1,12 @@
 import React from "react";
-import Favorites from "./Favorites.js";
+import SearchResultsContainer from "./SearchResultsContainer.js";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { rootReducer } from "../../reducers/index";
 
-describe("Favorites", () => {
+describe("SearchResultsContainer", () => {
   let testStore;
   let testWrapper;
 
@@ -14,20 +14,20 @@ describe("Favorites", () => {
     testStore = createStore(rootReducer);
     testWrapper = (
       <Provider store={testStore}>
-        <Favorites />
+        <SearchResultsContainer />
       </Provider>
     );
   });
 
   it("Should render on the dashboard", () => {
     const { getByText } = render(testWrapper);
-    const container = getByText("FAVORITES:");
+    const container = getByText("RESULTS:");
     expect(container).toBeInTheDocument();
   });
 
-  it("Should render with no favorites by default", () => {
+  it("Should render with no results by default", () => {
     const { getByText } = render(testWrapper);
-    const message = getByText("You have no favorites (yet)!");
+    const message = getByText("No matching cards!");
     expect(message).toBeInTheDocument();
   });
 });

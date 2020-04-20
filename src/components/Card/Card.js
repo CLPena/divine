@@ -43,6 +43,7 @@ class Card extends Component {
           <h3>meaning:</h3>
           <p>{this.props.meaning_up}</p>
           <button
+            id={this.props.name}
             data-testid={`favorite-${this.props.name}`}
             className="favorite-button"
             onClick={this.toggleFavorite}

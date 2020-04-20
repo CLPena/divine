@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 import { getCards } from "../../actions";
 import PropTypes from "prop-types";
 
-class SearchResults extends Component {
+class FavoritesContainer extends Component {
   render() {
-    let results;
-    if (this.props.search.length) {
-      results = this.props.search.map((card) => {
+    let favs;
+    if (this.props.favorites.length) {
+      favs = this.props.favorites.map((card) => {
         return (
           <Card
             key={card.name}
@@ -20,33 +20,31 @@ class SearchResults extends Component {
         );
       });
     } else {
-      results = <h3>No matching cards!</h3>;
+      favs = <h3>You have no favorites (yet)!</h3>;
     }
 
     return (
-      <div className="search-dashboard">
-        <h2> RESULTS: </h2>
-        {results}
+      <div className="favorites-dashboard" data-testid="favorites-dashboard">
+        <h2> FAVORITES: </h2>
+        {favs}
       </div>
     );
   }
 }
 
-SearchResults.propTypes = {
-  search: PropTypes.array,
-  cards: PropTypes.array,
+FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
+  cards: PropTypes.array,
   getCards: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({
   cards: state.cards,
   favorites: state.favorites,
-  search: state.search
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getCards: (cards) => dispatch(getCards(cards)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesContainer);
