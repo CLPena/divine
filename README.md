@@ -1,4 +1,4 @@
-## DIVINE
+# DIVINE 
 #### SIMPLE TAROT
 
 #### Abstract
