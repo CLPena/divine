@@ -159,4 +159,32 @@ describe("App", () => {
     fireEvent.click(getByTestId("search-button"));
     expect(getByText("DRAW A CARD")).toBeInTheDocument();
   });
+
+  it("should redirect to the search results page when a valid search is submitted and stay on the search results page if an invalid search is submitted next", async () => {
+    const {
+      getByPlaceholderText,
+      getByTestId,
+      getByText,
+      queryByTestId,
+    } = utils;
+    fireEvent.change(getByPlaceholderText("search..."), {
+      target: { value: "First Card" },
+    });
+    fireEvent.click(getByTestId("search-button"));
+    expect(getByText("RESULTS:")).toBeInTheDocument();
+
+    fireEvent.change(getByPlaceholderText("search..."), {
+      target: { value: "No!" },
+    });
+    fireEvent.click(getByTestId("search-button"));
+    expect(getByText("RESULTS:")).toBeInTheDocument();
+  });
+
+  it("should display all cards if an empty search is submitted", async () => {
+    const { getByPlaceholderText, getByTestId, queryByText, getByText } = utils;
+    fireEvent.click(getByTestId("search-button"));
+    expect(getByText("RESULTS:")).toBeInTheDocument();
+    expect(getByText("First Card")).toBeInTheDocument();
+    expect(getByText("Second Card")).toBeInTheDocument();
+  });
 });
