@@ -50,7 +50,6 @@ describe("App", () => {
 
   it("should be able to change views to browse cards page", async () => {
     const { getByText } = utils;
-    await waitFor(() => getByText("BROWSE CARDS"));
     fireEvent.click(getByText("BROWSE CARDS"));
     await waitFor(() => getByText("First Card"));
     await waitFor(() => getByText("Second Card"));
@@ -60,7 +59,6 @@ describe("App", () => {
 
   it("should be able to change views to favorites page", async () => {
     const { getByText, getByTestId } = utils;
-    await waitFor(() => getByText("FAVORITES"));
     fireEvent.click(getByText("FAVORITES"));
     await waitFor(() => getByTestId("favorites-dashboard"));
     expect(getByTestId("favorites-dashboard")).toBeInTheDocument();
@@ -68,7 +66,6 @@ describe("App", () => {
 
   it("should default to no favorites on favorites page", async () => {
     const { getByText, getByTestId } = utils;
-    await waitFor(() => getByText("FAVORITES"));
     fireEvent.click(getByText("FAVORITES"));
     await waitFor(() => getByTestId("favorites-dashboard"));
     expect(getByText("You have no favorites (yet)!")).toBeInTheDocument();
@@ -76,7 +73,6 @@ describe("App", () => {
 
   it("should be able to add a card to favorites", async () => {
     const { getByText, getByTestId } = utils;
-    await waitFor(() => getByText("BROWSE CARDS"));
     fireEvent.click(getByText("BROWSE CARDS"));
     await waitFor(() => getByText("First Card"));
     await waitFor(() => getByText("Second Card"));
@@ -85,9 +81,8 @@ describe("App", () => {
     expect(getByText("Second Card")).toBeInTheDocument();
   });
 
-  it("should be able to add a remove a card from favorites", async () => {
+  it("should be able to remove a card from favorites", async () => {
     const { getByText, getByTestId, queryByTestId } = utils;
-    await waitFor(() => getByText("BROWSE CARDS"));
     fireEvent.click(getByText("BROWSE CARDS"));
     await waitFor(() => getByText("First Card"));
     await waitFor(() => getByText("Second Card"));
@@ -97,5 +92,11 @@ describe("App", () => {
     expect(getByText("Second Card")).toBeInTheDocument();
     fireEvent.click(getByTestId("favorite-Second Card"));
     expect(queryByTestId("favorite-Second Card")).toBeNull();
+  });
+
+  it("should allow a user to enter a term into the search bar", async () => {
+    const { getByPlaceholderText, getByTestId, queryByTestId } = utils;
+    fireEvent.keyDown(getByPlaceholderText("search..."), { key: 'T'});
+    // expect(queryByTestId("favorite-Second Card")).toBeNull();
   });
 });
