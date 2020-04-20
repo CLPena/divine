@@ -1,6 +1,6 @@
 import { cards } from './cards';
 
-describe('Card Reducers Test', () => {
+describe('Cards Reducers Test', () => {
   it('should return the initial state', () => {
     const expected = [];
     const result = cards(undefined, {});
