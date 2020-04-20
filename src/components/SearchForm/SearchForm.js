@@ -53,13 +53,13 @@ SearchForm.propTypes = {
   favorites: PropTypes.array,
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  search: results => dispatch( search(results) )
-})
-
 const mapStateToProps = (state) => ({
   cards: state.cards,
   favorites: state.favorites,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  search: results => dispatch( search(results) )
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchForm))

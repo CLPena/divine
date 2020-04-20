@@ -32,14 +32,14 @@ SearchResults.propTypes = {
   getCards: PropTypes.func
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  getCards: cards => dispatch( getCards(cards) )
-})
-
 const mapStateToProps = (state) => ({
   cards: state.cards,
   favorites: state.favorites,
   search: state.search
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getCards: cards => dispatch( getCards(cards) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
