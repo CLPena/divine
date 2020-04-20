@@ -39,7 +39,7 @@ class SearchForm extends Component {
       <form className="search-container">
         <input className="search" placeholder="search..." onChange={this.handleChange} value={this.state.searchTerm}>
         </input>
-        <button type="submit" className="search-button" onClick={this.handleSubmit}><img className='planet' src={planet} alt='search icon'/></button>
+        <button type="submit" className="search-button" onClick={this.handleSubmit} data-testid="search-button"><img className='planet' src={planet} alt='search icon'/></button>
         <p className={this.state.classes}>Sorry, no matches found!</p>
       </form>
     );
