@@ -8,11 +8,9 @@ DIVINE is a virtual tarot deck for beginners who don't want to invest in buying 
 [Cristina Peña](https://github.com/CLPena)
 
 #### Screenshots
-![Dashboard](URL)
+![Dashboard](https://i.imgur.com/6yeZECL.png)
 
-![Browse Page](URL)
-
-![Favorites Page](URL)
+![Favorites Page](https://i.imgur.com/HxeML8I.png)
 
 #### In Action
 ![Random Card, Browse Cards, and Favorites Gif](URL)
