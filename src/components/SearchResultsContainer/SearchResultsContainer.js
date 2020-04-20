@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getCards } from "../../actions";
 import PropTypes from "prop-types";
 
-class SearchResults extends Component {
+class SearchResultsContainer extends Component {
   render() {
     let results;
     if (this.props.search.length) {
@@ -32,8 +32,8 @@ class SearchResults extends Component {
   }
 }
 
-SearchResults.propTypes = {
-  search: PropTypes.func,
+SearchResultsContainer.propTypes = {
+  search: PropTypes.array,
   cards: PropTypes.array,
   favorites: PropTypes.array,
   getCards: PropTypes.func,
@@ -42,11 +42,11 @@ SearchResults.propTypes = {
 const mapStateToProps = (state) => ({
   cards: state.cards,
   favorites: state.favorites,
-  search: state.search,
+  search: state.search
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getCards: (cards) => dispatch(getCards(cards)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResultsContainer);

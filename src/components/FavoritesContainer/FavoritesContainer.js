@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getCards } from "../../actions";
 import PropTypes from "prop-types";
 
-class Favorites extends Component {
+class FavoritesContainer extends Component {
   render() {
     let favs;
     if (this.props.favorites.length) {
@@ -24,7 +24,7 @@ class Favorites extends Component {
     }
 
     return (
-      <div className="favorites-dashboard">
+      <div className="favorites-dashboard" data-testid="favorites-dashboard">
         <h2> FAVORITES: </h2>
         {favs}
       </div>
@@ -32,7 +32,7 @@ class Favorites extends Component {
   }
 }
 
-Favorites.propTypes = {
+FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
   cards: PropTypes.array,
   getCards: PropTypes.func,
@@ -47,4 +47,4 @@ const mapDispatchToProps = (dispatch) => ({
   getCards: (cards) => dispatch(getCards(cards)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesContainer);

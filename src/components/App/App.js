@@ -7,8 +7,8 @@ import { getCards } from "../../actions";
 import Nav from "../Nav/Nav";
 import RandomCard from "../RandomCard/RandomCard";
 import BrowseCards from "../BrowseCards/BrowseCards";
-import Favorites from "../Favorites/Favorites";
-import SearchResults from "../SearchResults/SearchResults";
+import FavoritesContainer from "../FavoritesContainer/FavoritesContainer";
+import SearchResultsContainer from "../SearchResultsContainer/SearchResultsContainer";
 import PropTypes from "prop-types";
 
 import { apiFetchRandomCard, apiFetchAllCards } from "../../apiCalls/apiCalls";
@@ -33,9 +33,9 @@ class App extends Component {
 
           <Route path="/browse" exact render={() => <BrowseCards />} />
 
-          <Route path="/favorites" exact render={() => <Favorites />} />
+          <Route path="/favorites" exact render={() => <FavoritesContainer />} />
 
-          <Route path="/search" exact render={() => <SearchResults />} />
+          <Route path="/search" exact render={() => <SearchResultsContainer />} />
 
           <Route path="*" render={() => <RandomCard />} />
         </Switch>
