@@ -1,21 +1,21 @@
 .dashboard {
+  align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
   justify-content: space-between;
 
   .buttons-container {
+    align-items: center;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
     margin: 0;
   }
 
   .dashboard-buttons {
     @include buttonStyle;
+    margin-top: 2px !important;
     span {
       @include buttonSpanStyle;
     }
-    margin-top: 2px !important;
   }
 }
