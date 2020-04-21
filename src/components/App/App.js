@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getRandomCard } from "../../actions";
-import { Route, Switch } from "react-router-dom";
 import { getCards } from "../../actions";
 
+import { Route, Switch } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import RandomCard from "../RandomCard/RandomCard";
 import BrowseCards from "../BrowseCards/BrowseCards";
@@ -29,23 +29,31 @@ class App extends Component {
       <main>
         <Nav />
         <Switch>
-          <Route exact path="/" render={() => <RandomCard />} />
-
-          <Route path="/browse" exact render={() => <BrowseCards />} />
+          <Route
+            exact
+            path="/"
+            render={() => <RandomCard />} />
 
           <Route
-            path="/favorites"
             exact
+            path="/browse"
+            render={() => <BrowseCards />} />
+
+          <Route
+            exact
+            path="/favorites"
             render={() => <FavoritesContainer />}
           />
 
           <Route
-            path="/search"
             exact
+            path="/search"
             render={() => <SearchResultsContainer />}
           />
 
-          <Route path="*" render={() => <RandomCard />} />
+          <Route
+            path="*"
+            render={() => <RandomCard />} />
         </Switch>
       </main>
     );
@@ -59,14 +67,9 @@ App.propTypes = {
   getCards: PropTypes.func,
 };
 
-const mapStateToProps = (state) => ({
-  randomCard: state.randomCard,
-  favorites: state.favorites,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   getRandomCard: (randomCard) => dispatch(getRandomCard(randomCard)),
   getCards: (cards) => dispatch(getCards(cards)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
