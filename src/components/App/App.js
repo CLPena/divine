@@ -13,7 +13,7 @@ import PropTypes from "prop-types";
 
 import { apiFetchRandomCard, apiFetchAllCards } from "../../apiCalls/apiCalls";
 
-class App extends Component {
+  class App extends Component {
   componentDidMount = () => {
     apiFetchRandomCard()
       .then((randomCard) => this.props.getRandomCard(randomCard.cards[0]))
