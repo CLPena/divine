@@ -1,5 +1,11 @@
 language: node_js
 node_js:
-  - "node"
+- node
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: u//NopcVAEA7Ev2i+F5T9yUTsNTsIGo/5m1uMC0E32gmEEeUBfvRs2YvqozrgJ/qSw5GvDMTnQpzmptGJLGQ5OOtnH6l4wrW3paVZSmJNvTqMopAUw/AyU6Qt277imox1y4RDAW/uLFE1hEdzNtSfXFBSVY3mQVI+DQUSMX8nfQpYLvL/OGiwJu9gNsAOxySfMV2Ywi2PKqw8yYwmDKSk4bTe0CSOIxk+u4S7B/b/mXuYLiCbcPlbFm+e0Z6N0tFWnQO1o+m6hZDDih8oriWNa7Eu3fLqV/nr0lPmdpxBomioqdSwknA+HVbJkECwn1ofV+A83/HrnA9be3jhbd2fkB1r4lUnkA0waxP1HMbUYvXnN87zmuH/Pqs5S3V/YH/fV3hc+l78OfAzSGXh8Ii7RizmF8YIBy1+dvvV5/CmRfzVKYP3JUbnG/pGPcKAJU8zqX9SDxn9oHVUJN4fosIcqRIHaFiOTjK0DlLPaAxAaye0Z0IrpayTgXDvr3ciEFemtSeA9dhFOR7v3zSOeJ4y+YLOwJiofjIBmTd6/gWDO2gGbHk02tluRN+b84/FnsGYTYd5SZeB6e1r1BuezeaBo9cjTh9DZV4TM+SbfLAMJAyWg7Ioix76cAlnjvV4UpYiii+PKqGKGU4Y0ljek5Q208qGVDtiDKfLT9bTkKkAoA=
+  app: divine-simple-tarot
+  skip_cleanup: true
