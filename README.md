@@ -7,6 +7,9 @@ DIVINE is a virtual tarot deck for beginners who don't want to invest in buying 
 #### Contributors
 [Cristina Peña](https://github.com/CLPena)
 
+#### Deployed App
+[Divine](https://divine-simple-tarot.herokuapp.com/)
+
 #### Screenshots
 ![Dashboard](https://i.imgur.com/6yeZECL.png)
 
