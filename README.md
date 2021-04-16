@@ -34,7 +34,7 @@ The wireframe for this project can be viewed on [Figma](https://www.figma.com/fi
 - Different images for cards of different suits/types
 - User login that allows users to save their favorites
 - Multiple-card reading spreads
-- Ability to save spraeds and record notes
+- Ability to save spreads and record notes
 - Page where the user can view saved spreads
 - I am also exploring the possibility of setting up my own API with card information and learning Vue and GraphQl to refactor the app using these technologies.
 
