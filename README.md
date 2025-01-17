@@ -28,17 +28,3 @@ Testing: Jest, React Testing Library
 
 #### Wireframe
 The wireframe for this project can be viewed on [Figma](https://www.figma.com/file/GOAV18OUrx45oj2WUqfal0/DIVINE?node-id=0%3A1).
-
-#### Project Next Steps
-- Modal on dashboard with instructions on using random card generator
-- Different images for cards of different suits/types
-- User login that allows users to save their favorites
-- Multiple-card reading spreads
-- Ability to save spreads and record notes
-- Page where the user can view saved spreads
-- I am also exploring the possibility of setting up my own API with card information and learning Vue and GraphQl to refactor the app using these technologies.
-
-#### Setup
-- Fork and clone down this repo.
-- Once you have cloned the repo, change into the directory.
-- To view the application, run npm and open the provided localhost url in the browser.
