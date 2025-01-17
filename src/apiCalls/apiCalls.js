@@ -1,5 +1,5 @@
 const BASE_URL =
-  "https://cors-anywhere.herokuapp.com/https://rws-cards-api.herokuapp.com/api/v1";
+  "https://tarotapi.dev/api/v1";
 const RANDOM_CARD_ENDPOINT = "/cards/random";
 const ALL_CARDS_ENDPOINT = "/cards";
 
